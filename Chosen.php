@@ -30,12 +30,17 @@ class Chosen extends InputWidget
     /**
      * @var boolean whether to show deselect button on single select
      */
-    public $allowSingleDeselect = true;
+    public $allowDeselect = true;
 
     /**
      * @var integer hide the search input on single selects if there are fewer than (n) options
      */
-    public $disableSearchThreshold = 10;
+    public $disableSearch = 10;
+
+    /**
+     * @var string placeholder text
+     */
+    public $placeholder = null;
 
     /**
      * @var array items array to render select options
@@ -62,13 +67,13 @@ class Chosen extends InputWidget
         parent::init();
         if ($this->multiple) {
             $this->options['multiple'] = true;
-        } elseif ($this->allowSingleDeselect) {
+        } elseif ($this->allowDeselect) {
             $this->items = ArrayHelper::merge([null => ''], $this->items);
             $this->clientOptions['allow_single_deselect'] = true;
         }
-        $this->clientOptions['disable_search_threshold'] = $this->disableSearchThreshold;
-        $this->clientOptions['placeholder_text_single'] = \Yii::t('app', 'Select an option');
-        $this->clientOptions['placeholder_text_multiple'] = \Yii::t('app', 'Select some options');
+        $this->clientOptions['disable_search_threshold'] = $this->disableSearch;
+        $this->clientOptions['placeholder_text_single'] = \Yii::t('app', $this->placeholder ? $this->placeholder : 'Select an option');
+        $this->clientOptions['placeholder_text_multiple'] = \Yii::t('app', $this->placeholder ? $this->placeholder : 'Select some options');
         $this->clientOptions['no_results_text'] = \Yii::t('app', 'No results match');
         $this->options['unselect'] = null;
         $this->registerScript();

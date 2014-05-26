@@ -25,7 +25,7 @@ use nex\chosen\Chosen;
 <?= $form->field($model, 'selectable_attr')->widget(
     Chosen::className(), [
         'items' => [1 => 'First item', 2 => 'Second item', 3 => 'Third item'],
-        'disableSearchThreshold' => 5,
+        'disableSearch' => 5,
         'clientOptions' => [
             'search_contains' => true,
             'single_backstroke_delete' => false
@@ -41,7 +41,7 @@ use nex\chosen\Chosen;
 <?= Chosen::widget([
     'name' => 'ChosenTest',
     'value' => 3,
-    'allowSingleDeselect' => false,
+    'allowDeselect' => false,
     'clientOptions' => [
         'search_contains' => true
     ]
