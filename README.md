@@ -6,6 +6,24 @@ Credits
 Chosen http://harvesthq.github.io/chosen/
 Chosen Bootstrap Look & Feel https://github.com/dbtek/chosen-bootstrap (with my style fixes)
 
+Installation
+------------
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+
+Either run
+
+```
+php composer.phar require "nex/yii2-chosen" "*"
+```
+
+or add
+
+```json
+"nex/yii2-chosen" : "*"
+```
+
+to the `require` section of your application's `composer.json` file.
+
 Usage
 -----
 **With a model**
