@@ -43,10 +43,10 @@ use nex\chosen\Chosen;
 <?= $form->field($model, 'selectable_attr')->widget(
     Chosen::className(), [
         'items' => [1 => 'First item', 2 => 'Second item', 3 => 'Third item'],
-        'disableSearch' => 5,
+        'disableSearch' => 5, // Search input will be disabled while there are fewer than 5 items
         'clientOptions' => [
             'search_contains' => true,
-            'single_backstroke_delete' => false
+            'single_backstroke_delete' => false,
         ]
 ]);?>
 ```
@@ -59,9 +59,12 @@ use nex\chosen\Chosen;
 <?= Chosen::widget([
     'name' => 'ChosenTest',
     'value' => 3,
+    'items' => [1 => 'First item', 2 => 'Second item', 3 => 'Third item'],
     'allowDeselect' => false,
+    'disableSearch' => true, // Search input will be disabled
     'clientOptions' => [
-        'search_contains' => true
+        'search_contains' => true,
+        'max_selected_options' => 2,
     ]
 ]);?>
 ```

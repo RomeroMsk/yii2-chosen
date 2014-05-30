@@ -33,7 +33,7 @@ class Chosen extends InputWidget
     public $allowDeselect = true;
 
     /**
-     * @var integer hide the search input on single selects if there are fewer than (n) options
+     * @var integer|boolean hide the search input on single selects if there are fewer than (n) options or disable at all if set to true
      */
     public $disableSearch = 10;
 
@@ -71,7 +71,11 @@ class Chosen extends InputWidget
             $this->items = ArrayHelper::merge([null => ''], $this->items);
             $this->clientOptions['allow_single_deselect'] = true;
         }
-        $this->clientOptions['disable_search_threshold'] = $this->disableSearch;
+        if ($this->disableSearch === true) {
+            $this->clientOptions['disable_search'] = true;
+        } else {
+            $this->clientOptions['disable_search_threshold'] = $this->disableSearch;
+        }
         $this->clientOptions['placeholder_text_single'] = \Yii::t('app', $this->placeholder ? $this->placeholder : 'Select an option');
         $this->clientOptions['placeholder_text_multiple'] = \Yii::t('app', $this->placeholder ? $this->placeholder : 'Select some options');
         $this->clientOptions['no_results_text'] = \Yii::t('app', 'No results match');
