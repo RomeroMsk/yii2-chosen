@@ -4,6 +4,7 @@ Chosen + Bootstrap 3 + Yii2
 Credits
 -------
 Chosen http://harvesthq.github.io/chosen/
+
 Chosen Bootstrap Look & Feel https://github.com/dbtek/chosen-bootstrap (with my style fixes)
 
 Installation
