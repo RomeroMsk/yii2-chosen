@@ -43,6 +43,11 @@ class Chosen extends InputWidget
     public $placeholder = null;
 
     /**
+     * @var string category for placeholder translation
+     */
+    public $translateCategory = 'app';
+
+    /**
      * @var array items array to render select options
      */
     public $items = [];
@@ -76,8 +81,8 @@ class Chosen extends InputWidget
         } else {
             $this->clientOptions['disable_search_threshold'] = $this->disableSearch;
         }
-        $this->clientOptions['placeholder_text_single'] = \Yii::t('app', $this->placeholder ? $this->placeholder : 'Select an option');
-        $this->clientOptions['placeholder_text_multiple'] = \Yii::t('app', $this->placeholder ? $this->placeholder : 'Select some options');
+        $this->clientOptions['placeholder_text_single'] = \Yii::t($this->translateCategory, $this->placeholder ? $this->placeholder : 'Select an option');
+        $this->clientOptions['placeholder_text_multiple'] = \Yii::t($this->translateCategory, $this->placeholder ? $this->placeholder : 'Select some options');
         $this->clientOptions['no_results_text'] = \Yii::t('app', 'No results match');
         $this->options['unselect'] = null;
         $this->registerScript();
