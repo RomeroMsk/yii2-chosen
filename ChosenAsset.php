@@ -2,7 +2,7 @@
 /**
  * @copyright Copyright (c) 2014 Roman Ovchinnikov
  * @link https://github.com/RomeroMsk
- * @version 1.0.0
+ * @version 1.0.1
  */
 namespace nex\chosen;
 
