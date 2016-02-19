@@ -43,6 +43,11 @@ class Chosen extends InputWidget
     public $placeholder = null;
 
     /**
+     * @var string no_results_text text
+     */
+    public $noResultsText = null;
+
+    /**
      * @var string category for placeholder translation
      */
     public $translateCategory = 'app';
@@ -83,7 +88,7 @@ class Chosen extends InputWidget
         }
         $this->clientOptions['placeholder_text_single'] = \Yii::t($this->translateCategory, $this->placeholder ? $this->placeholder : 'Select an option');
         $this->clientOptions['placeholder_text_multiple'] = \Yii::t($this->translateCategory, $this->placeholder ? $this->placeholder : 'Select some options');
-        $this->clientOptions['no_results_text'] = \Yii::t('app', 'No results match');
+        $this->clientOptions['no_results_text'] = \Yii::t($this->translateCategory, $this->noResultsText ? $this->noResultsText : 'No results match');
         $this->options['unselect'] = null;
         $this->registerScript();
         $this->registerEvents();
