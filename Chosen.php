@@ -111,7 +111,7 @@ class Chosen extends InputWidget
      */
     public function registerScript()
     {
-        ChosenAsset::register($this->getView());
+        ChosenBootstrapAsset::register($this->getView());
         $clientOptions = Json::encode($this->clientOptions);
         $id = $this->options['id'];
         $this->getView()->registerJs("jQuery('#$id').chosen({$clientOptions});");
