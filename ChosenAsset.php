@@ -17,18 +17,13 @@ use yii\web\AssetBundle;
  */
 class ChosenAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/nex/yii2-chosen/assets';
-
-    public $css = [
-        'css/chosen.bootstrap.css'
-    ];
+    public $sourcePath = '@vendor/bower/chosen';
 
     public $js = [
-        'js/chosen.jquery.js'
+        'chosen.jquery.min.js'
     ];
 
     public $depends = [
-        'yii\bootstrap\BootstrapAsset',
         'yii\web\JqueryAsset',
     ];
 }
