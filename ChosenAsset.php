@@ -17,7 +17,7 @@ use yii\web\AssetBundle;
  */
 class ChosenAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/chosen';
+    public $sourcePath = '@bower/chosen';
 
     public $js = [
         'chosen.jquery.min.js'
