@@ -4,7 +4,7 @@
     "description": "Bootstrap Chosen widget for Yii2",
     "keywords": ["yii2", "extension", "widget", "chosen", "bootstrap", "bootstrap 3"],
     "homepage": "https://github.com/RomeroMsk/yii2-chosen",
-    "license": "BSD 3-Clause",
+    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Roman Ovchinnikov",
